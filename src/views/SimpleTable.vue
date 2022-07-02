@@ -7,7 +7,6 @@
         <overflow-tooltip
           :content="value.row.address"
           :autoEnterable="true"
-          placement="top-start"
           popperClass="simple-table-popper"
         ></overflow-tooltip>
       </template>

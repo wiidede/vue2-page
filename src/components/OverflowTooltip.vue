@@ -9,10 +9,14 @@
     :popper-class="popperClass"
     :visible-arrow="false"
   >
-    <span ref="overflowTooltipContent"
-         :class="className" class="overflow-content" @mouseover="isOverflow">
-      {{ content }}
-    </span>
+    <div class="overflow-content-wrapper">
+      <span
+        ref="overflowTooltipContent"
+        class="overflow-content"
+        :class="className"
+        @mouseover="isOverflow"
+      >{{ content }}</span>
+    </div>
   </el-tooltip>
 </template>
 
@@ -76,6 +80,12 @@ export default {
 </script>
 
 <style scoped>
+.overflow-content-wrapper {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .overflow-content {
   overflow: hidden;
   text-overflow: ellipsis;
